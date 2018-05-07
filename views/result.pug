@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  section
+    h2.topic_title #{topic}
+    div.info
+      if error
+        p #{error}    
+    div.pdf_holder
+      if !error
+        each entry in query
+          p Year: #{entry[0]}
+          p Question number: #{entry[1]}
+          canvas(id= entry[0])
+          script.
+            url = '/pdfs/' + !{mod} + '_exam_' + #{entry[0]} + '.pdf';
+            console.log(url);
+            run(url, #{entry[2]}, #{entry[0]})
+          br
+  //- script.
+  //-   url = '/pdfs' + #{mod} + '_exam_' + #{entry[0]} + '.pdf';
+  //-   console.log(url);
+  //-   run(url, 2)

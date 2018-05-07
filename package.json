@@ -1,0 +1,29 @@
+{
+  "name": "xintra",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "browserify": "^16.2.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jquery-typeahead": "^2.10.4",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "pdfjs-dist": "^2.0.489",
+    "pug": "2.0.0-beta11",
+    "request": "^2.85.0",
+    "url": "^0.11.0",
+    "webpack": "^4.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3",
+    "webpack-cli": "^2.1.2"
+  }
+}

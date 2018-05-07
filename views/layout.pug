@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js')
+    script(type='text/javascript' src='/javascripts/typeahead.js')
+    script(type='text/javascript' src='/javascripts/search.js')
+    script(type='text/javascript' src='/javascripts/pdf_js/pdf.js')
+    script(type='text/javascript' src='/javascripts/pdf_js/pdf.worker.js')
+    script(type='text/javascript' src='/javascripts/pdfreader.js')
+  body.container
+    nav.navBar
+      span.titleItem Xintra (v1.0)
+      a.navBarItem(href="/") Home
+      a.navBarItem(href="/about") About 
+
+    block content

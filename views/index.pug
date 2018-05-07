@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  select.module(id= "module_select" onchange="unhide__module()")
+    option(disabled="disabled" selected value='default') Select an option
+    each module in modules
+      option(value= module[1]) #{module[0]} 
+    
+  div#bloodhound__ism(class='myInput', hidden='true')
+    script(type='text/javascript').
+      $(document).ready(function() {
+        renderSearch__ism(!{topics__ism});
+      });
+    
+    input(class="typeahead" type="text" placeholder='Search for a topic...')
+      
+  div#bloodhound__pic(class='myInput', hidden='true')
+    script(type='text/javascript').
+      $(document).ready(function() {
+        renderSearch__pic(!{topics__pic});
+      });
+    
+    input(class="typeahead" type="text" placeholder='Search for a topic...')
+  
+  script(type='text/javascript').
+    getCurrentSelected()
+      
+  ul.myUL(id= 'list_ism' hidden='true')
+    if topics_no_form__ism
+      each topic in topics_no_form__ism
+        li 
+          a(href='/result?mod=ism' + '&topic=' + topic) #{topic}
+          
+  ul.myUL(id= 'list_pic' hidden='true')
+    if topics_no_form__pic
+      each topic in topics_no_form__pic
+        li 
+          a(href='/result?mod=pic' + '&topic=' + topic) #{topic}
+  h2.info(id= 'started') To get started select a module!
